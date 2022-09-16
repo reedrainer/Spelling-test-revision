@@ -17,6 +17,11 @@ while score != len(weeks_words):
     output.save("output.mp3")
 
     os.system("open output.mp3")
+    
+    # The word (open) in the line above will have to be changed depending on your system. 
+    # for Mac this will work but you will need to change it to './FILENAME' for linux or 'start FILENAME.mp3'
+    # for windows. Im actually sure theres an easier way to do this without having to import os
+    # once i figure this out ill update the program. 
 
     attempt = input("Please spell the word you have just heard. type 'repeat' to hear it again. ")
 
