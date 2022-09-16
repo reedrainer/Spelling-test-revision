@@ -1,8 +1,9 @@
-
 from gtts import gTTS
-import os
+from playsound import playsound
 
 weeks_words = ["tomato", "carrot", "pumpkin", "python", "children", "programming"]
+
+problem_words = []
 
 score = 0
 
@@ -16,21 +17,24 @@ while score != len(weeks_words):
 
     output.save("output.mp3")
 
-    os.system("open output.mp3")
-    
-    # The word (open) in the line above will have to be changed depending on your system. 
-    # for Mac this will work but you will need to change it to './FILENAME' for linux or 'start FILENAME.mp3'
-    # for windows. Im actually sure theres an easier way to do this without having to import os
-    # once i figure this out ill update the program. 
+    playsound("output.mp3")
 
     attempt = input("Please spell the word you have just heard. type 'repeat' to hear it again. ")
 
     if attempt == "repeat":
-        os.system("open output.mp3")
+        playsound("output.mp3")
     elif attempt == word:
         score += 1
         print(f"Well done, Your current score is {score} out of {len(weeks_words)}.")
     elif attempt != word:
         print(f"Incorrect. Your current score is still {score}.")
+        problem_words.append(word)
 
 print(f"Your final score is {score}")
+playsound("celebration.mp3")
+
+if len(problem_words) > 0:
+    print(f"Your problem words are {problem_words}")
+if len(problem_words) >= 3:
+    playsound("brah.mp3")
+
