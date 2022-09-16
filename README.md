@@ -1,5 +1,5 @@
-# python_bits
-A few simple bits and peices in python.
+# Spelling test revision.
+A program for helping with revision for spelling tests.
 Hi all, made this for my daughter. The idea being that she can have a play with some code as well as learning her weekly spellings.
 
 You will need to install gtts via pip (the python package manager)
